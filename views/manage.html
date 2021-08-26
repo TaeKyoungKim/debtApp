@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대차관리</title>
+</head>
+<body>
+    <h1>관리페이지</h1>
+    <h3>
+        <table>
+            <tr>
+                <th>USERNAME</th>
+                <th>대출신청금액</th>
+                <th>대출신청주소</th>
+            </tr>
+            <tr>
+                <% for (i=0;i<data.length;i++) { %>
+                    <td><%= data[i].name %></td>
+                    <td><%= data[i].amount %></td>
+                    <td>
+                        <form action="/accept/<%= data[i].address %>/<%= data[i].id %>/<%= data[i].amount %>" , method="POST">
+                            <input type="number" name="asign" id="">
+                            <input type="submit" value="대출실행">
+                        </form>
+                        <form action="/reject" , method="POST">
+                            <input type="number" name="asign" id="">
+                            <input type="submit" value="대출거부">
+                        </form>
+                       
+                    
+                    
+                    </td>
+        
+                <% } %>
+            </tr>
+        </table>
+       
+        
+        
+        </h3>
+</body>
+</html>
